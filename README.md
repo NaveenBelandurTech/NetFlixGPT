@@ -1,6 +1,18 @@
 # NetFlix Gpt
 - Create React App
 - Configured TailwindCss
+- Header
+- Routing of the app
+- Login Form
+- Sign Up Form
+- Form Validation
+- useRef
+- FireBase Setup
+- Deploying App to Production
+- Create Sign Up User Account
+- Implement user sign in Api
+- Created Redux Store with userSlice
+
 
 # Features
 - Login/Sign Up
