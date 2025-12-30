@@ -1,16 +1,11 @@
-import {Body} from './Componet/Body'
+import { Body } from "./Componet/Body";
 
-const App = () =>{
-    return (
-        <>
-     <Body/>
-        </>
-    )
-}
+const App = () => {
+  return (
+    <>
+      <Body />
+    </>
+  );
+};
 
-
-
-
-
-
-export default App
+export default App;
