@@ -7,3 +7,8 @@ export const API_CONSTANT = {
     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0OGJhMDQ1MmNjOTJkNDBjNzcwMjIyNmUzZjFjYzJjZSIsIm5iZiI6MTc2NzQwOTM4Ny40NDEsInN1YiI6IjY5NTg4NmViZWJmZWU2YjcyZWQ3OTg0ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aLk8MAPwPsRY6-FT3jgxoCyNjCXseakPTFZ_Lu1tNeA'
   }
 };
+
+// This is the Base url to get the imdb api first is the image api second is the file size then the path
+export const IMAGE_CDN = 'https://image.tmdb.org/t/p/w500/'
+
+

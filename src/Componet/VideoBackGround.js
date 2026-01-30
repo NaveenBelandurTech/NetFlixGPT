@@ -8,7 +8,7 @@ const VideoBackGround = ({ moviesid }) => {
 
   return (
     <>
-      <div className=" w-screen">
+      <div className=" w-screen h-auto">
         {" "}
         <iframe
           className="w-screen aspect-video"
