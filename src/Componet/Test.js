@@ -10,7 +10,7 @@ const FetchData = async () =>{
     const Data = await fetch('https://jsonplaceholder.typicode.com/users')
    if(Data){
     const res = await Data.json()
-    console.log(res)
+
    }
 
     }

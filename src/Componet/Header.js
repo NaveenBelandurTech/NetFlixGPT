@@ -7,6 +7,9 @@ import { addUser, removeUser } from "../utils/userSlice";
 import { onAuthStateChanged } from "firebase/auth";
 import { toast } from "react-toastify";
 import { LOGO } from "../utils/constants";
+import {toggleGPtSearchView} from '../utils/gptSlice'
+import { SupportedLanguage } from "../utils/constants";
+import {changeLanguage} from '../utils/configslice'
 
 const Header = () => {
   const Dispatch = useDispatch();
@@ -14,6 +17,11 @@ const Header = () => {
   const Selector = useSelector((data) => {
     return data.user;
   });
+
+  const GptSearch = useSelector((data)=>{
+    return data.gpt.
+showGptsearch
+  })
 
   const handleSignOut = () => {
     signOut(auth)
@@ -31,7 +39,6 @@ const Header = () => {
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        console.log(user, "user profile");
         // When ever the User is register or login this function runs
         const { uid, email, displayName } = user;
         Dispatch(
@@ -53,9 +60,20 @@ const Header = () => {
     return () => unSubscribe();
   }, []);
 
+  const handleGptsearch = () =>{
+    // Toogle  GPT Search Button
+     Dispatch(toggleGPtSearchView())
+  }
+
+  const handleChange = (e)=>{
+   Dispatch(changeLanguage(e.target.value))
+  }
+
+
+
   return (
     <div
-      className="absolute w-full z-10 px-8   py-2 bg-gradient-to-b from to-black"
+      className="absolute w-full z-10 px-8  py-2 bg-gradient-to-b from to-black"
       style={{
         display: "flex",
         flexDirection: "row",
@@ -72,7 +90,14 @@ const Header = () => {
       {Selector == null ? (
         ""
       ) : (
-        <div>
+        <div className='flex p-2'>
+          {GptSearch &&    <select className='p-2 m-2 bg-gray-900 text-white' onChange={handleChange}>
+            {SupportedLanguage.map((data,i)=> <option key={i} value={data.indi}>
+              {data.name}
+            </option>)}
+          </select>}
+       
+          <button className='py-2 px-4 mx-4 my-2 bg-purple-800 text-white rounded-2xl' onClick={handleGptsearch}>{GptSearch ? "Home Page" : 'Gpt Search'}</button>
           <button
             onClick={handleSignOut}
             className="cursor-pointer text-white font-bold"

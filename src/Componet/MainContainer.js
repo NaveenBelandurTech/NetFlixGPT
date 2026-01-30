@@ -11,7 +11,7 @@ const MainContainer = () =>{
   }
   // This is call The Main Movie from the above data
   const MovieFirst = MovieData[0]
-  console.log(MovieFirst)
+ 
 
   const {original_title,overview,id} = MovieFirst
     return (

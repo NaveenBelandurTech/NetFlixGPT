@@ -27,6 +27,11 @@
 - Custom Hook For Trailer Video 
 - Update the store with Trailer Video Data
 - Embedded The Youtube video make it autoplay and mute
+- useCustomHooks for all the movies
+- Building the search Bar
+- GPt search Bar 
+- Added Multiple Lang feature in app
+
 # Features
 - Login/Sign Up
 

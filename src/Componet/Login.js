@@ -5,20 +5,20 @@ import { checkValidateData } from "../utils/validate";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  updateProfile
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { FaEyeSlash } from "react-icons/fa";
 import { IoEyeSharp } from "react-icons/io5";
-import {useNavigate} from 'react-router-dom'
-import {toast} from 'react-toastify'
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [isSignInForm, setisSignForm] = useState(true);
   const [errormessage, setErrormessage] = useState(null);
   const [visible, setVisible] = useState(true);
 
-  const Navigate = useNavigate()
+  const Navigate = useNavigate();
 
   let fullName = useRef(null);
   let email = useRef(null);
@@ -37,7 +37,7 @@ const Login = () => {
     // Using the Ref
     const validate = checkValidateData(
       email.current.value,
-      password.current.value
+      password.current.value,
     );
     setErrormessage(validate);
     // If You Got Message then it will return
@@ -49,27 +49,26 @@ const Login = () => {
       createUserWithEmailAndPassword(
         auth,
         email.current.value,
-        password.current.value
+        password.current.value,
       )
         .then((userCredential) => {
-
           // Signed up
-       
-        
 
           const user = userCredential.user;
           updateProfile(auth.currentUser, {
-  displayName: fullName.current.value, photoURL: "https://example.com/jane-q-user/profile.jpg"
-}).then(() => {
-  Navigate('/browse')
-  // ...
-}).catch((error) => {
-  // An error occurred
-  // ...
-});
-          console.log(user, "user registered");
-                // Signed up
-          toast.success('Registered In SuccessFully')
+            displayName: fullName.current.value,
+            photoURL: "https://example.com/jane-q-user/profile.jpg",
+          })
+            .then(() => {
+              Navigate("/browse");
+              // ...
+            })
+            .catch((error) => {
+              // An error occurred
+              // ...
+            });
+          // Signed up
+          toast.success("Registered In SuccessFully");
           email.current.value = "";
           password.current.value = "";
           fullName.current.value = "";
@@ -85,14 +84,14 @@ const Login = () => {
       signInWithEmailAndPassword(
         auth,
         email.current.value,
-        password.current.value
+        password.current.value,
       )
         .then((userCredential) => {
           // Signed in
-          Navigate('/browse')
+          Navigate("/browse");
           const user = userCredential.user;
-          console.log(user, "user Logged in");
-             toast.success('Logged In SuccessFully')
+
+          toast.success("Logged In SuccessFully");
           email.current.value = "";
           password.current.value = "";
           // ...
@@ -138,7 +137,7 @@ const Login = () => {
           placeholder="Email Address"
           className="p-4 my-4 w-full bg-gray-700"
         />
-   
+
         <div className="relative">
           <input
             ref={password}
@@ -147,15 +146,13 @@ const Login = () => {
             className="  p-4 my-4 w-full bg-gray-700 "
           />
           <span
-              className="absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer text-gray-300 hover:text-white"
+            className="absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer text-gray-300 hover:text-white"
             onClick={passwordVisible}
-            style={{position:'absolute',right:'4rem',bottom:'15rem'}}
+            style={{ position: "absolute", right: "4rem", bottom: "15rem" }}
           >
             {visible ? <FaEyeSlash /> : <IoEyeSharp />}
           </span>
         </div>
-
-
 
         <p className="text-md text-red-600">{errormessage}</p>
         <button
