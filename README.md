@@ -18,7 +18,15 @@
 - BugFix:If user is not logged in redirect user to login page if Logged in Redirect to browse
 - UnSubscribe To On Auth CallBack
 - Add HarCoded File to the ReadMe File
-
+- Register TDMDI Create app and get access token
+- get data from tmmdi and display in redux store
+- Custom Hook for Now Playing Movies
+- update Store with movies Data
+- create MovieSlice
+- planning for main container and secondary container
+- Custom Hook For Trailer Video 
+- Update the store with Trailer Video Data
+- Embedded The Youtube video make it autoplay and mute
 # Features
 - Login/Sign Up
 

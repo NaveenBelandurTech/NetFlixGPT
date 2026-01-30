@@ -1,0 +1,53 @@
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Play button */
+.btn-play {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  background-color: #e6e6e6;
+  color: #000000;
+
+  padding: 12px 32px;
+  font-size: 20px;
+  font-weight: 600;
+
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  transition: background-color 0.2s ease;
+}
+
+.btn-play:hover {
+  background-color: rgba(109, 109, 110, 0.5);
+}
+
+/* More Info button */
+.btn-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  background-color: rgba(109, 109, 110, 0.7);
+  color: #ffffff;
+
+  padding: 12px 32px;
+  font-size: 20px;
+  font-weight: 600;
+
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  transition: background-color 0.2s ease;
+}
+
+.btn-info:hover {
+  background-color: rgba(109, 109, 110, 0.5);
+}

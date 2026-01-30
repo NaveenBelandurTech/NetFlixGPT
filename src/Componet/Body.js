@@ -19,9 +19,9 @@ export const Body = () => {
 
 
   return (
-    <>
+    <div>
     <ToastContainer/>
       <RouterProvider router={AppRouter} />
-    </>
+    </div>
   );
 };
