@@ -31,6 +31,15 @@
 - Building the search Bar
 - GPt search Bar 
 - Added Multiple Lang feature in app
+- Get Open Ai Key
+- Get Search API Call
+- Fetch Movie From TMDB
+- Create gptSlice Added Data
+- Reused MovieList Component
+- Memoization
+- Added .env Files
+- Adding .env file to gitignore
+- Make Your Site Responsive
 
 # Features
 - Login/Sign Up
