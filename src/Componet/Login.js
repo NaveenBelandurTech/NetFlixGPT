@@ -147,7 +147,7 @@ const Login = () => {
             className="  p-4 my-4 w-full bg-gray-700 "
           />
           <span
-            className="cursor-pointer"
+              className="absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer text-gray-300 hover:text-white"
             onClick={passwordVisible}
             style={{position:'absolute',right:'4rem',bottom:'15rem'}}
           >

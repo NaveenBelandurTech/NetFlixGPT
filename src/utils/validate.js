@@ -22,9 +22,7 @@ export const checkValidateData = (email, password, fullName) => {
     return "Email Id is Not Valid";
   }
 
-  if (!isPasswordValid) {
-    return "Password Not Valid";
-  }
+
 
   return null;
 };
