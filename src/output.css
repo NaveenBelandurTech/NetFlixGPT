@@ -404,6 +404,9 @@
   .grid-cols-12 {
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }
+  .flex-row {
+    flex-direction: row;
+  }
   .justify-around {
     justify-content: space-around;
   }
@@ -424,6 +427,9 @@
   }
   .overflow-hidden {
     overflow: hidden;
+  }
+  .overflow-scroll {
+    overflow: scroll;
   }
   .overflow-x-hidden {
     overflow-x: hidden;
@@ -606,8 +612,26 @@
   .underline {
     text-decoration-line: underline;
   }
+  .opacity-10 {
+    opacity: 10%;
+  }
+  .opacity-40 {
+    opacity: 40%;
+  }
+  .opacity-60 {
+    opacity: 60%;
+  }
+  .opacity-70 {
+    opacity: 70%;
+  }
+  .opacity-80 {
+    opacity: 80%;
+  }
   .opacity-90 {
     opacity: 90%;
+  }
+  .opacity-100 {
+    opacity: 100%;
   }
   .outline {
     outline-style: var(--tw-outline-style);

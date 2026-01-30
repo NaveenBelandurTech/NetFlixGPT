@@ -3,7 +3,7 @@ import { Provider} from "react-redux";
 import AppStore from "./utils/appstore";
 import App from "./App";
 import './output.css'
-
+const Token = process.env.REACT_APP_OPENAI_KEY
 
 const Container = document.getElementById("root");
 const Root = createRoot(Container);
