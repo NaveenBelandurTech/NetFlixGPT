@@ -2,10 +2,14 @@ import {useEffect} from 'react'
 import {API_CONSTANT} from '../utils/constants'
 import { useDispatch } from 'react-redux'
 import {addPopularVideo} from '../utils/movieSlice'
+import { useSelector } from 'react-redux'
 
 
 const useNowPopularMovies = async() =>{
     const Dispatch = useDispatch()
+   
+    // Memo Checking if user already exist no need of Fetching again using from the store
+     const NowPlaying = useSelector((data)=>data.movie.popularVideo)
 
 
    const fetchData = async () =>{
@@ -16,7 +20,7 @@ const useNowPopularMovies = async() =>{
       Dispatch(addPopularVideo(response.results))
    }
        useEffect(()=>{
-     fetchData()
+        if(!NowPlaying)    fetchData()
     },[])
 
 }

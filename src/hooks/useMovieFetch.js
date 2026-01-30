@@ -2,10 +2,12 @@ import { useEffect } from "react";
 import { API_CONSTANT } from "../utils/constants";
 import { useDispatch } from "react-redux";
 import { addNowPlayingMovie } from "../utils/movieSlice";
+import { useSelector } from "react-redux";
+
 
 const useNowPlayingMovie = () => {
   const Dispatch = useDispatch();
-
+  const Selector = useSelector((data)=>data.movie.nowPlayingMovies)
   // Fetch Data from. TMDB Apj and adding to the redux store so better to add a custom Hooks here
   const getnowplayingmovies = async () => {
     const List = await fetch(
@@ -17,7 +19,7 @@ const useNowPlayingMovie = () => {
   };
 
   useEffect(() => {
-    getnowplayingmovies();
+    if(!Selector)  getnowplayingmovies();
   }, []);
 };
 

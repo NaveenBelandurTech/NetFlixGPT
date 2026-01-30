@@ -4,7 +4,7 @@ export const API_CONSTANT = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0OGJhMDQ1MmNjOTJkNDBjNzcwMjIyNmUzZjFjYzJjZSIsIm5iZiI6MTc2NzQwOTM4Ny40NDEsInN1YiI6IjY5NTg4NmViZWJmZWU2YjcyZWQ3OTg0ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aLk8MAPwPsRY6-FT3jgxoCyNjCXseakPTFZ_Lu1tNeA'
+    Authorization: 'Bearer ' + process.env.REACT_APP_TMDB_TOKEN
   }
 };
 
