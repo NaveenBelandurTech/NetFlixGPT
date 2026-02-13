@@ -115,7 +115,9 @@ const Login = () => {
         />
       </div>
 
+
       {/*Login Form */}
+         
       <form
         onSubmit={(e) => e.preventDefault()}
         className="absolute p-12  bg-black w-100 mx-auto my-36 right-0 left-0 text-white opacity-90"
@@ -137,6 +139,7 @@ const Login = () => {
           placeholder="Email Address"
           className="p-4 my-4 w-full bg-gray-700"
         />
+
 
         <div className="relative">
           <input
